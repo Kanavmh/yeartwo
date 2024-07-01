@@ -4,7 +4,10 @@
 using namespace std;
 int main(){
     int val,a,b;
-	cout<<"Good morning, what would you like to do today "<<endl;
+    string name;
+    cout<<"User: ";
+    cin>>name;
+	cout<<"Good morning "<<name<<", what would you like to do today "<<endl;
 	cout<<"1 to add"<<endl<<"2 to subtract"<<endl<<"3 to divide"<<endl<<"4 to mutiply"<<endl<<"5 to exit"<<endl;
 	cin>>val;
 	if(val!=5){
