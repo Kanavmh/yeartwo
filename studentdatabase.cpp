@@ -5,7 +5,7 @@ using namespace std;
 
 class student{
     public:
-        int roll;
+        long roll;
         string name;
         int phone;
         string location;
