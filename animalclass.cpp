@@ -5,13 +5,12 @@ class animal{
     public:
     void eat(){
         cout<<"Animal eats"<<endl;
-        
     }
     void sleep(){
         cout<<"Animal sleeps"<<endl;
     }
 };
-class dog{
+class dog:public animal{
     public:
     void bark(){
         cout<<"Dog barks"<<endl;
@@ -20,6 +19,5 @@ class dog{
 int main() {
     dog mydog;
     mydog.bark();
-    return 0;
-    
+    return 0;   
 }
