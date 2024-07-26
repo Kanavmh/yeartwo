@@ -34,6 +34,15 @@ class Pizza{
             category=pc;
             cout<<"Size= "<<s<<endl<<"Pizza Name= "<<pn<<endl<<"Price= "<<pp<<endl<<"Toppings= "<<top<<endl<<"Pizza Base= "<<pb<<endl<<"Category= "<<pc<<endl;
         }
+        Pizza(Pizza &obj){
+            size= obj.size;
+            this->pname=obj.pname;
+            this->type=obj.type;
+            this->price=obj.price;
+            this->toppings=obj.toppings;
+            this->base=obj.base;
+            this->cateory=obj.category;
+        }
 };
 
 
