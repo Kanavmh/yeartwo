@@ -41,13 +41,30 @@ class Pizza{
             this->price=obj.price;
             this->toppings=obj.toppings;
             this->base=obj.base;
-            this->cateory=obj.category;
+            this->category=obj.category;
         }
+        
 };
 
+class Order{
+    int OrderID;
+    string name;
+    string paytype;
+    string address;
+    long int mobile;
+    public:
+        Order(){
+            OrderID = 0;
+            name="NA";
+            paytype="NA";
+            address="NA";
+            mobile=1234567890;
+        }
+};
 
 int main() {
     //Pizza p1;
     Pizza p2('M',"Farmhouse",'V',200,"Mushroom, Capsicum","Thin Crust",'D');
+    Order o1;
     return 0;
 }
