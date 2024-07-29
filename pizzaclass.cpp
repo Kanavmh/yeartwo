@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+class Order;
 class Pizza{
     char size;
     string pname;
@@ -10,6 +11,7 @@ class Pizza{
     string toppings;
     string base;
     char category;
+    friend void pizzaorder(Pizza&,Order&);
     
     public:
         Pizza(){
@@ -60,11 +62,16 @@ class Order{
             address="NA";
             mobile=1234567890;
         }
+        friend void Pizzaorder(Pizza&,Order&);
 };
+
+
+
 
 int main() {
     //Pizza p1;
     Pizza p2('M',"Farmhouse",'V',200,"Mushroom, Capsicum","Thin Crust",'D');
     Order o1;
+    //Pizzaorder(p2,o1);
     return 0;
 }
