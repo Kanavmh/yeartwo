@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validateForm(){
+            var name = document.myform.name.value;
+            var password = document.myform.password.value;
+            if (name == null || name == " "){
+                alert("Name can't be blank");
+                return false;
+            }else if(password.length < 6){
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+        }
+
+        function validate(){
+            let checkbox = document.getElementById("agree_document");
+            let text = document.getElementById("confirm");
+
+            if (checkbox.checked){
+                text.innerHTML = "You have agreed to the terms and conditions.";
+            }else{
+                text.innerHTML = "Please agree to the terms and conditions.";
+            }
+        }
+
+        
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Agreement</h1>
+
+    <div>
+        <input id="agree_document" type="checkbox" value="Agreement">
+        <label for="agree_document">Accept the Terms & Conditions</label>
+    </div>
+    <button id="agreed" onclick="validate()">Submit</button>
+
+    <h3 id="confirm"></h3>
+
+
+   <!-- <form action="/prompt.html" onsubmit="return validateForm()">
+        Name: <input type="text" name="name"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Register">
+    </form>-->
+    
+</body>
+</html>
