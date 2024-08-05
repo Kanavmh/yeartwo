@@ -9,6 +9,9 @@ class Add{
 };
 int main() {
     Add <int> obj1;
-    cout<<obj1.add(4,5);
+    cout<<obj1.add(4,5)<<endl;
+
+    Add <string> obj2;
+    cout<<obj2.add("Abc","sad")<<endl;
     return 0;
 }
