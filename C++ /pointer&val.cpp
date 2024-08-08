@@ -9,26 +9,26 @@ int main(){
     long * l = new long;
     bool * b = new bool;
     
-    cout<<a<<endl;
-    cout<<c<<endl;
-    cout<<f<<endl;
-    cout<<d<<endl;
-    cout<<l<<endl;
-    cout<<b<<endl;
+    cout<<"Integer: "<<a<<endl;
+    cout<<"Character: "<<c<<endl;
+    cout<<"Float: "<<f<<endl;
+    cout<<"Double: "<<d<<endl;
+    cout<<"Long int: "<<l<<endl;
+    cout<<"Boolean: "<<b<<endl;
     
-    cout<<*a<<endl;
-    cout<<*c<<endl;
-    cout<<*f<<endl;
-    cout<<*d<<endl;
-    cout<<*l<<endl;
-    cout<<*b<<endl;
+    cout<<"Integer Address: "<<*a<<endl;
+    cout<<"Character Address: "<<*c<<endl;
+    cout<<"Float: "<<*f<<endl;
+    cout<<"Double: "<<*d<<endl;
+    cout<<"Long integer: "<<*l<<endl;
+    cout<<"Boolean: "<<*b<<endl;
     
-    cout<<sizeof(a)<<endl;
-    cout<<sizeof(c)<<endl;
-    cout<<sizeof(f)<<endl;
-    cout<<sizeof(d)<<endl;
-    cout<<sizeof(l)<<endl;
-    cout<<sizeof(b)<<endl;
+    cout<<"Size of Integer: "<<sizeof(a)<<endl;
+    cout<<"Size of Character: "<<sizeof(c)<<endl;
+    cout<<"Size of Float: "<<sizeof(f)<<endl;
+    cout<<"Size of Double: "<<sizeof(d)<<endl;
+    cout<<"Size of Long int: "<<sizeof(l)<<endl;
+    cout<<"Size of Boolean: "<<sizeof(b)<<endl;
     
     delete a;
     delete c;
