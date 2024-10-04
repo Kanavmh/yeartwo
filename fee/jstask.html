@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing table</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=DM+Serif+Display&display=swap');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Pacifico', cursive;
+            background-color: #FF4500;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 6em;
+            text-align: center;
+            color: #FFD700;
+            font-family: 'DM Serif Display', serif;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        #countdown {
+            font-size: 6em;
+            text-align: center;
+            color: #FFD700;
+            font-family: 'DM Serif Display', serif;
+        }
+        .disc {
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 50%;
+            background-color: #FFD700;
+            margin-left: 20px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .container {
+            text-align: center;
+        }
+        .pricing-table {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            font-family: "Comfortaa", sans-serif;
+        }
+        .plan {
+            background-color: #FFD700;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            color: #FF4500;
+            font-family: "Comfortaa", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .plan h2 {
+            margin: 0 0 10px;
+            font-family: "Comfortaa", sans-serif;
+        }
+        .plan p {
+            margin: 0 0 20px;
+            font-size: 1.2em;
+            color: #FF4500;
+            font-family: "Comfortaa", sans-serif;
+        }
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: "Comfortaa", sans-serif;
+            flex-grow: 1;
+        }
+        .plan ul li {
+            margin: 10px 0;
+            font-family: "Comfortaa", sans-serif;
+        }
+        .select-button {
+            background-color: #FF4500;
+            color: #FFD700;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Comfortaa", sans-serif;
+        }
+        .select-button:hover {
+            background-color: #FF6347;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #FFD700;
+            font-family: "Comfortaa", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="highlighted-heading">Kartikeya's Websites</h1>
+        <div class="pricing-table"></div>
+        <a href="countdown.html">Coming soon</a>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const plans = [
+                {
+                    name: 'Basic',
+                    price: '₹1000/month',
+                    features: ['Responsive Design', 'Basic SEO', '1 GB Storage']
+                },
+                {
+                    name: 'Standard',
+                    price: '₹2000/month',
+                    features: ['Responsive Design', 'Advanced SEO', '10 GB Storage', 'Email Support']
+                },
+                {
+                    name: 'Premium',
+                    price: '₹3000/month',
+                    features: ['Responsive Design', 'Advanced SEO', 'Unlimited Storage', 'Priority Email Support', 'Custom Domain']
+                }
+            ];
+
+            const container = document.querySelector('.pricing-table');
+            const messageDiv = document.getElementById('message');
+
+            plans.forEach(plan => {
+                const planDiv = document.createElement('div');
+                planDiv.className = 'plan';
+
+                const planName = document.createElement('h2');
+                planName.textContent = plan.name;
+                planDiv.appendChild(planName);
+
+                const planPrice = document.createElement('p');
+                planPrice.textContent = plan.price;
+                planDiv.appendChild(planPrice);
+
+                const featureList = document.createElement('ul');
+                plan.features.forEach(feature => {
+                    const featureItem = document.createElement('li');
+                    featureItem.textContent = feature;
+                    featureList.appendChild(featureItem);
+                });
+                planDiv.appendChild(featureList);
+
+                const selectButton = document.createElement('button');
+                selectButton.className = 'select-button';
+                selectButton.textContent = 'Select';
+                selectButton.addEventListener('click', () => {
+                    messageDiv.textContent = `You have selected the ${plan.name} plan.`;
+                });
+                planDiv.appendChild(selectButton);
+
+                container.appendChild(planDiv);
+            });
+        });
+    </script>
+</body>
+</html>
