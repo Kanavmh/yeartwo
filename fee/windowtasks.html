@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows event task</title>
+    <style>
+        #scrollPosition {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p id="resizeMessage"></p>
+    <p id="scrollPosition"></p>
+
+    <div style="height: 1000px;"></div>
+    <div style="height: 1000px;"></div>
+    <div style="height: 1000px;"></div>
+    
+    <script>
+        window.onload = function() {
+            alert("Welcome!");
+            window.onscroll();
+        };
+
+        window.onresize = function() {
+            document.getElementById('resizeMessage').innerText = 'Window resized to: ' + window.innerWidth + 'x' + window.innerHeight;
+            window.onscroll();
+        };
+
+        window.onscroll = function() {
+            document.getElementById('scrollPosition').innerText = 'Scroll position: ' + window.scrollY + 'px, Window size: ' + window.innerWidth + 'x' + window.innerHeight;
+        };
+    </script>
+</body>
+</html>
