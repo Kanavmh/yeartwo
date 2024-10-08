@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        var student = false;
+        let promise = new Promise(function(resolve, reject){
+            if (student) {
+                resolve('Student are listening to the class');}
+            else {
+                reject('Students are not listening to the class');
+            }
+        });
+//promise chaining
+        promise.then(()=>{
+            console.log('Students are listening to the class');
+        }).catch((FailureMsg)=>{
+            console.log("Students are not listening to the class");
+        }).finally(()=>{
+            console.log('End of the class');
+        });
+        
+    </script>
+</body>
+</html>
