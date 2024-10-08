@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Programming Notes</title>
+    <script src="asyncvssync.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(to bottom, #e0e8b7 30px, #ddefae 30px);
+            background-size: 100% 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .note-form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .note-form input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        .note-form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .note-form button:hover {
+            background-color: #0056b3;
+        }
+        .notes {
+            list-style-type: none;
+            padding: 0;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background: linear-gradient(to bottom, #fff 30px, #f9f9f9 30px);
+            background-size: 100% 30px;
+        }
+        .notes li {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Asynchronous Programming Notes</h1>
+    <div class="note-form">
+        <input type="text" id="noteInput" placeholder="Enter a new note">
+        <button onclick="addNote()">Add Note</button>
+        <button onclick="createNewSection()">Create New Section</button>
+    </div>
+    <div id="sections">
+        <ul class="notes" id="notesList">
+            <li>1. Synchronous Programming vs Asynchronous Programming</li>
+            <li>2. Promises</li>
+            <li>3. Event loop</li>
+            <li>4. Callbacks (part of event loop)</li>
+            <li>5. Sync/Await</li>
+        </ul>
+    </div>
+    <div id="sections">
+        <ul class="notes" id="notesList">
+            <li><h3>Promises</h3></li>
+            <li>1. Pending</li>
+            <li>2. Fullfilled</li>
+            <li>3. Rejected</li><br>
+            <li>Let promises = new Promise(function(resolve,reject){<br>
+                //code to execute <br>
+                if(condition is met){<br>
+                    resolve('Success!');<br>
+                }<br>
+                else{<br>
+                    reject('Failure!');<br>
+                }<br>
+                });
+            </li><br>
+            <li>Promise Chaining:<br>
+                then(function(result){<br>
+                    //handle resolve result<br>
+                })<br>
+                .finally(function(){<br>
+                    // code to execute after either success or error <br>
+                });<br>
+            </li>
+        </ul>
+    </div>
+    <div id="sections">
+        <ul class="notes" id="notesList">
+            <li>1. Synchronous vs Asynchronous </li>
+            <li> Synchronous: In Synchronous programming, tasks are executed </li>
+            <li> Asynchronous: Tasks can be initiated and allowed to run in the background</li>
+        </ul>
+    </div>
+
+    
+
+    <script>
+        function addNote() {
+            const noteInput = document.getElementById('noteInput');
+            const noteText = noteInput.value.trim();
+            if (noteText !== "") {
+                const notesList = document.querySelector('.notes:last-of-type');
+                const newNote = document.createElement('li');
+                newNote.textContent = noteText;
+                notesList.appendChild(newNote);
+                noteInput.value = "";
+            }
+        }
+
+        function createNewSection() {
+            const sections = document.getElementById('sections');
+            const newSection = document.createElement('ul');
+            newSection.className = 'notes';
+            sections.appendChild(newSection);
+        }
+    </script>
+</body>
+</html>
