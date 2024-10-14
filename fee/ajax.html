@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<body>
+    <h1>AJAX</h1>
+    <button type="button" id="getBtn">Click me</button>
+
+    <p id="content">Demo Content</p>
+
+    <script>
+            let assign = document.getElementById("getBtn");
+            assign.addEventListener("click", ()=>{
+                let http = new XMLHttpRequest();
+                
+                http.onreadystatechange = function(){
+                    console.log("Ready state is " + this.readyState);
+                }
+
+                http.onload = function(){
+                    if(this.readyState==4 && this.status==200){
+                        document.getElementById("content").innerHTML = this.responseText;
+                    }
+                }
+                http.open("GET", "data.txt", true);
+                http.send();
+            });
+        
+    </script>
+</body>
+</html>
