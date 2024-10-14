@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            padding: 10px 0;
+        }
+        h3 {
+            color: #555;
+            padding: 5px 0;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Ajax</h1>
+    <ul>
+        <li>Dynamic Content Updates</li>
+        <li>Form submission without page reload</li>
+        <li>Auto completion and live search</li>
+        <li>Real time updates</li>
+        <li>Pagination</li>
+        <li>Real time chart updates</li>
+    </ul>
+    <br>
+    <h3>Client side: AJAX uses JS to send requests to the server</h3>
+    <h3>Server side: The server processes the request and sends data back in formats like XML, JSON, or HTML</h3>
+    <h3>Asynchronous nature: The browser doesn't wait for the response</h3>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>open(method, url, async)</td>
+                <td>Initializes a request</td>
+                <td>xhr.open('GET', 'https://api.example.com', true);</td>
+            </tr>
+            <tr>
+                <td>send(data)</td>
+                <td>Sends the request to the server</td>
+                <td>xhr.send();</td>
+            </tr>
+            <tr>
+                <td>setRequestHeader()</td>
+                <td>Adds a label/value pair to the header to be sent</td>
+                <td>xhr.setRequestHeader('Content-Type', 'application/json');</td>
+            </tr>
+            <tr>
+                <td>abort()</td>
+                <td>Cancels the current request</td>
+                <td>xhr.abort();</td>
+            </tr>
+            <tr>
+                <td>getAllResponseHeaders()</td>
+                <td>Returns header information</td>
+                <td>xhr.getAllResponseHeaders();</td>
+            </tr>
+            <tr>
+                <td>getResponseHeader()</td>
+                <td>Returns specific header information</td>
+                <td>xhr.getResponseHeader('Content-Type');</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h1 style="text-align: center;">Refer to <a href="ajax.html">Ajax</a></h1>
+
+
+
+    
+
+
+</body>
+</html>
