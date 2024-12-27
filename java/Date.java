@@ -1,15 +1,13 @@
 public class Date {
     public static void main(String[] args){
-        // 23.3.04
-        // 15/4/1998
-        // 12-3-2004
         String date1 = "23.3.04";
         String date2 = "15/4/1998";
         String date3 = "12-3-2004";
+        String date4 = "14-07/98";
         System.out.println(format(date1));
         System.out.println(format(date2));
         System.out.println(format(date3));
-
+        System.out.println(format(date4));
     }
     
     public static int format(String date){
