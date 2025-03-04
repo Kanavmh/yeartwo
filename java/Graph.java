@@ -6,6 +6,9 @@ public class Graph {
         };
         int[][] graph = buildGraph(edges,n);
         printGraph(graph);
+        int[] visited = new int[n];
+        boolean pathExists = hasPath(graph, 0, n - 1, visited);
+        System.out.println(pathExists);
     }
     private static void printGraph(int[][] graph){
         for(int i = 0; i< graph.length; i++){
@@ -24,5 +27,19 @@ public class Graph {
             graph[des][src] = 1;
         }
         return graph;
+    }
+    private static boolean hasPath(int[][] graph, int src,int des, int[] visited){
+        if(src == des){
+            return true;
+        }
+        int[] nbrs = graph[src];
+        for(int i=0; i<nbrs.length;i++){
+            if(nbrs[i] != 0 && visited[i] == 0){
+                visited[i] = 1;
+                boolean ans = hasPath(graph, i, des, visited);
+                if(ans==true) return true;
+            }
+        }
+        return false;
     }   
 }
